@@ -1,0 +1,58 @@
+/* Анимации сайта. Всё скрытое включается только когда js/motion.js добавил html.motion, поэтому без скриптов страница читается как обычно.
+   При prefers-reduced-motion скрипт не запускается, лишнего движения нет. */
+
+/* Появление блоков при прокрутке */
+html.motion .rv { opacity: 0; transform: translate3d(0, 26px, 0); filter: blur(6px); transition: opacity .9s cubic-bezier(.22, .7, .2, 1) var(--rd, 0ms), transform 1s cubic-bezier(.22, .7, .2, 1) var(--rd, 0ms), filter .9s ease var(--rd, 0ms); }
+html.motion .rv.in { opacity: 1; transform: none; filter: none; }
+
+/* Фото раскрываются шторкой, внутри мягкий сдвиг при прокрутке */
+html.motion .photo.rv { opacity: 1; transform: none; filter: none; clip-path: inset(0 0 100% 0 round 14px); transition: clip-path 1.2s cubic-bezier(.7, 0, .2, 1) var(--rd, 0ms); }
+html.motion .photo.rv.in { clip-path: inset(0 0 0 0 round 14px); }
+.photo.has-photo { overflow: hidden; }
+html.motion .photo.has-photo img { transform: translate3d(0, var(--py, 0px), 0) scale(1.12); will-change: transform; }
+
+/* Заголовок первого экрана по словам */
+html.motion .hero .h1 .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+html.motion .hero .h1 .w > span { display: inline-block; transform: translate3d(0, 108%, 0); transition: transform 1s cubic-bezier(.2, .8, .2, 1) var(--wd, 0ms); }
+html.motion .hero .h1.in .w > span { transform: none; }
+
+/* Красная плашка заголовка заливается слева после появления слов */
+html.motion .hero .h1 .mark { background-size: 0% 100%; transition: background-size .9s cubic-bezier(.7, 0, .2, 1) .75s; }
+html.motion .hero .h1.in .mark { background-size: 100% 100%; }
+
+/* Полоски: сравнение цен и 90 дней вырастают слева */
+html.motion .vs__bar { transform: scaleX(0); transform-origin: 0 50%; transition: transform 1.2s cubic-bezier(.2, .8, .2, 1) .15s; }
+html.motion .vs.in .vs__bar { transform: none; }
+html.motion .track span { transform: scaleX(0); transform-origin: 0 50%; transition: transform .9s cubic-bezier(.2, .8, .2, 1); }
+html.motion .track span:nth-child(2) { transition-delay: .12s; } html.motion .track span:nth-child(3) { transition-delay: .24s; }
+html.motion .track span:nth-child(4) { transition-delay: .36s; } html.motion .track span:nth-child(5) { transition-delay: .48s; }
+html.motion .track.in span { transform: none; }
+
+/* Индикатор прокрутки */
+.progress { position: fixed; left: 0; top: 0; right: 0; height: 3px; z-index: 70; transform: scaleX(0); transform-origin: 0 50%; background: linear-gradient(90deg, var(--red), var(--red-bright)); pointer-events: none; }
+
+/* Шапка получает тень после первого прокручивания */
+.header { transition: box-shadow .3s ease, background-color .3s ease; }
+.header.is-scrolled { box-shadow: 0 10px 34px rgba(19, 21, 25, .07); }
+
+/* Кнопки: блик и сдвиг стрелки */
+.btn--primary { position: relative; overflow: hidden; isolation: isolate; }
+.btn--primary::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, .28) 50%, transparent 70%); transform: translateX(-120%); }
+.btn--primary:hover::after { transform: translateX(120%); transition: transform .8s ease; }
+.btn .arr { transition: transform .25s ease; }
+.btn:hover .arr { transform: translateX(4px); }
+.btn--primary { transition: background-color .16s ease, transform .16s ease, box-shadow .25s ease; }
+.btn--primary:hover { box-shadow: 0 12px 28px rgba(225, 37, 27, .28); transform: translateY(-1px); }
+.link { transition: text-decoration-color .2s ease, color .2s ease; }
+
+/* Смена вопроса в квизе */
+.quiz__body > * { animation: quiz-in .45s cubic-bezier(.2, .8, .2, 1) both; }
+.quiz__body > *:nth-child(2) { animation-delay: .05s; } .quiz__body > *:nth-child(3) { animation-delay: .1s; }
+@keyframes quiz-in { from { opacity: 0; transform: translate3d(0, 10px, 0); } to { opacity: 1; transform: none; } }
+.quiz__bar i { transition: width .5s cubic-bezier(.2, .8, .2, 1); }
+
+@media (prefers-reduced-motion: reduce) {
+  .progress { display: none; }
+  .quiz__body > * { animation: none; }
+  html.motion .rv, html.motion .photo.rv { opacity: 1; transform: none; filter: none; clip-path: none; }
+}

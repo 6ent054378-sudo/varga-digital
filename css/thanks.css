@@ -1,0 +1,37 @@
+/* Страница «Спасибо»: прогрев после заявки. Светлая основа, ориентир окупаемости в тёмном блоке. */
+.thx { padding: clamp(40px, 6vw, 88px) 0 clamp(64px, 9vw, 120px); }
+.thx__grid { display: grid; gap: clamp(36px, 5vw, 64px); }
+@media (min-width: 980px) { .thx__grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); align-items: start; } }
+.thx__main { display: grid; gap: 26px; justify-items: start; }
+.thx__ok { display: inline-flex; align-items: center; gap: 10px; font-size: .95rem; font-weight: 600; color: var(--ok); }
+.thx__ok::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
+.thx__h1 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); max-width: 14ch; }
+
+.next { display: grid; counter-reset: n; width: 100%; border-top: 1px solid var(--ink); }
+.next li { position: relative; display: grid; gap: 4px; padding: 18px 0 18px 48px; border-bottom: 1px solid var(--line); }
+.next li::before { counter-increment: n; content: counter(n); position: absolute; left: 0; top: 18px; font-family: var(--display); font-weight: 600; font-size: 1.1rem; color: var(--red); font-variant-numeric: tabular-nums; }
+.next p { color: var(--muted); max-width: 52ch; }
+
+.thx__who { display: grid; grid-template-columns: 56px 1fr; gap: 14px; align-items: center; width: 100%; max-width: 440px; }
+.thx__ava { width: 56px; height: 56px; border-radius: var(--r-m); overflow: hidden; display: grid; place-items: center; background: var(--ink); color: #fff; font-family: var(--display); font-weight: 600; font-size: 1.5rem; }
+.thx__ava img { width: 100%; height: 100%; object-fit: cover; }
+.thx__actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.thx__actions:empty { display: none; }
+
+.thx__side { display: grid; gap: 20px; }
+.thx__card { display: grid; gap: 14px; padding: clamp(22px, 3vw, 32px); border-radius: var(--r-l); background: var(--bg-alt); }
+#thxEstimate { background: var(--dark); color: var(--dark-text); }
+#thxEstimate .h3 { color: #fff; }
+#thxEstimate .muted, #thxEstimate .small { color: var(--dark-muted); }
+.thx__table { width: 100%; min-width: 440px; border-collapse: collapse; font-size: .95rem; }
+.thx__table th, .thx__table td { padding: 10px 8px; border-bottom: 1px solid var(--dark-line); font-weight: 400; }
+.thx__table thead th { font-size: .8rem; color: var(--dark-muted); text-align: right; }
+.thx__table tbody th { text-align: left; color: var(--dark-muted); }
+.thx__table td { text-align: right; font-weight: 600; color: #fff; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.thx__table td.is-neg { color: var(--dark-muted); }
+.thx__rec { padding: 14px 16px; border-radius: var(--r-s); background: var(--dark-2); border-left: 3px solid var(--red-bright); color: var(--dark-text); }
+
+.checks { display: grid; gap: 12px; counter-reset: ch; }
+.checks li { position: relative; padding-left: 34px; color: var(--muted); }
+.checks li strong { color: var(--ink); font-weight: 600; }
+.checks li::before { counter-increment: ch; content: counter(ch); position: absolute; left: 0; top: 1px; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: .8rem; font-weight: 650; background: var(--bg); color: var(--ink); border: 1px solid var(--line-strong); }

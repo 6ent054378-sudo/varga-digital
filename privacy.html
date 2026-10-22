@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Политика конфиденциальности: Varga Digital</title>
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <style>
+    .doc { max-width: 760px; padding: clamp(32px, 6vw, 72px) 0 clamp(48px, 8vw, 96px); display: grid; gap: 18px; }
+    .doc h2 { font-size: 1.25rem; margin-top: 18px; letter-spacing: -0.015em; }
+    .doc ul { display: grid; gap: 6px; padding-left: 20px; list-style: disc; color: var(--muted); }
+    .doc p { color: var(--muted); }
+    .doc a { color: var(--ink); }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="wrap header__row">
+      <a class="logo" href="index.html" aria-label="Varga Digital, на главную">
+        <img class="logo__mark" src="img/logo-mark.svg" alt="" width="45" height="24">
+        <span class="logo__text">Varga Digital</span>
+      </a>
+      <a class="btn btn--ghost btn--sm" href="index.html">На главную</a>
+    </div>
+  </header>
+  <main class="wrap doc">
+    <h1 class="h2">Политика конфиденциальности</h1>
+    <p>Дата вступления в силу: 22 октября 2026 года.</p>
+
+    <h2>1. Кто обрабатывает данные</h2>
+    <p>Оператор персональных данных: <span id="op">самозанятый, указан в подвале сайта</span>. По вопросам обработки данных пишите на <span id="mail">адрес, указанный в подвале сайта</span>.</p>
+
+    <h2>2. Какие данные мы собираем</h2>
+    <ul>
+      <li>Имя (если вы его указали), номер телефона и выбранный способ связи.</li>
+      <li>Ответы на вопросы квиза: сфера бизнеса, средний чек, рекламный бюджет и другие.</li>
+      <li>Технические данные: адрес страницы, откуда вы пришли, метки рекламных ссылок, cookie.</li>
+    </ul>
+
+    <h2>3. Зачем мы это делаем</h2>
+    <ul>
+      <li>Чтобы связаться с вами и ответить на заявку.</li>
+      <li>Чтобы подготовить расчёт окупаемости и разбор сайта и рекламы.</li>
+      <li>Чтобы анализировать работу сайта и улучшать её (Яндекс Метрика).</li>
+    </ul>
+
+    <h2>4. Правовое основание</h2>
+    <p>Ваше согласие, которое вы даёте, отправляя форму, и необходимость подготовить ответ на ваш запрос. Обработка данных ведётся в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+
+    <h2>5. Кому мы передаём данные</h2>
+    <p>Мы не продаём и не передаём ваши данные третьим лицам для их маркетинга. Для работы сервисов данные обрабатывают: хостинг сайта, сервис приёма заявок, мессенджер, который вы выбрали, Яндекс Метрика и CRM-система оператора. Хранение данных граждан России осуществляется на территории России, если иное не требуется для работы выбранного вами мессенджера.</p>
+
+    <h2>6. Сроки хранения</h2>
+    <p>Заявку и ответы мы храним, пока ведём с вами переговоры, и не более трёх лет после последнего контакта, если вы не стали клиентом. Данные клиентов хранятся в течение срока договора и срока, который требуется по закону.</p>
+
+    <h2>7. Cookie и Яндекс Метрика</h2>
+    <p>Сайт использует cookie и Яндекс Метрику, чтобы понимать, какие блоки полезны посетителям. Вы можете отключить cookie в настройках браузера, сайт продолжит работать.</p>
+
+    <h2>8. Ваши права</h2>
+    <p>Вы можете запросить сведения о ваших данных, их исправление, удаление или отозвать согласие. Для этого напишите на адрес, указанный выше. Мы ответим в срок, установленный законом.</p>
+
+    <h2>9. Изменения</h2>
+    <p>Мы можем обновлять политику. Актуальная версия всегда размещена на этой странице.</p>
+  </main>
+  <script src="js/config.js"></script>
+  <script>
+    (function () {
+      var c = window.SITE_CONFIG;
+      if (c.legal) document.getElementById("op").textContent = c.legal;
+      if (c.email) document.getElementById("mail").textContent = c.email;
+    })();
+  </script>
+</body>
+</html>

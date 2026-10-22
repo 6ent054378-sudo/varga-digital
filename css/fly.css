@@ -1,0 +1,23 @@
+/* Летающие картинки: слои из img/fly/<имя>/ собираются js/fly.js. Положения в js/fly-data.js. */
+.fly { position: relative; width: 100%; isolation: isolate; }
+.fly--tile { border-radius: var(--r-m); overflow: hidden; background: var(--ink); }
+.fly__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+.fly__layer { position: absolute; opacity: 0; transform: translate3d(var(--ex, 0), var(--ey, 24px), 0) scale(.93); }
+.fly__par { width: 100%; height: 100%; transform: translate3d(calc(var(--px, 0) * var(--d, 10) * 1px), calc(var(--py, 0) * var(--d, 10) * 1px), 0); }
+.fly__img { display: block; width: 100%; height: 100%; max-width: none; pointer-events: none; user-select: none; }
+.fly.is-in .fly__layer { opacity: 1; transform: none; transition: opacity .9s ease var(--delay, 0s), transform 1.25s cubic-bezier(.16, .84, .24, 1) var(--delay, 0s); }
+.fly.is-live .fly__img { animation: fly-bob var(--dur, 8s) ease-in-out var(--bob, 0s) infinite; }
+.fly.is-live .fly__layer { transition: none; }
+@keyframes fly-bob {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(var(--fx, 0), calc(var(--amp, 8px) * -1), 0) rotate(var(--rot, 0deg)); }
+}
+.hero { overflow-x: clip; }
+.fly--hero { max-width: 640px; justify-self: end; }
+@media (min-width: 1020px) { .fly--hero { width: 128%; max-width: none; margin-right: -14%; } }
+@media (max-width: 1019px) { .fly--hero { max-width: 520px; justify-self: start; } }
+.svc .fly { margin-bottom: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .fly__layer { opacity: 1; transform: none; }
+  .fly.is-live .fly__img { animation: none; }
+}

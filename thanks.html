@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Заявка принята: Varga Digital</title>
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/thanks.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+  <header class="header">
+    <div class="wrap header__row">
+      <a class="logo" href="index.html" aria-label="Varga Digital, на главную">
+        <img class="logo__mark" src="img/logo-mark.svg" alt="" width="45" height="24">
+        <span class="logo__text">Varga Digital</span>
+      </a>
+      <a class="btn btn--ghost btn--sm" href="index.html">На главную</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="thx">
+      <div class="wrap thx__grid">
+        <div class="thx__main">
+          <p class="thx__ok">Заявка принята</p>
+          <h1 class="h1 thx__h1" id="thxTitle">Спасибо, заявка у Дмитрия</h1>
+          <p class="lead" id="thxLead">Дмитрий напишет вам в течение 15 минут в рабочее время и пришлёт расчёт и разбор вашего сайта и рекламы в течение 24 часов. Дождитесь сообщения: пишет основатель, а не менеджер.</p>
+
+          <ol class="next">
+            <li><h2 class="h3">Сейчас</h2><p>Заявка и ваши ответы уже у Дмитрия. Он смотрит ваш сайт и рекламу.</p></li>
+            <li><h2 class="h3">В течение 15 минут</h2><p id="thxContact">Первое сообщение с вопросом, что для вас важнее всего. Рабочее время указано ниже.</p></li>
+            <li><h2 class="h3">В течение 24 часов</h2><p>Три варианта расчёта окупаемости и разбор сайта и рекламы: что мешает получать заявки и что исправить в первую очередь.</p></li>
+            <li><h2 class="h3">Короткий созвон на 30 минут</h2><p>Обсудим расчёт и решим, нужна ли вам система целиком, только исследование или ничего из этого. Если не нужна, скажем прямо.</p></li>
+          </ol>
+          <p class="small muted" id="thxHours" hidden></p>
+
+          <div class="thx__who">
+            <div class="thx__ava" id="thxAva" aria-hidden="true"><span>Д</span></div>
+            <div><strong>Дмитрий</strong><p class="small muted">Основатель Varga Digital. Отвечаю лично.</p></div>
+          </div>
+          <div class="thx__actions" id="thxActions"></div>
+        </div>
+
+        <aside class="thx__side">
+          <section class="thx__card" id="thxEstimate" hidden>
+            <h2 class="h3">Ваш ориентир</h2>
+            <p class="small muted" id="thxEstimateNote"></p>
+            <div class="scroll-x">
+              <table class="thx__table">
+                <thead><tr><th></th><th>Осторожный</th><th>Базовый</th><th>Оптимистичный</th></tr></thead>
+                <tbody id="thxRows"></tbody>
+              </table>
+            </div>
+            <p class="small muted" id="thxAssump">Допущения: цена заявки 2 000 ₽ (±30%), 2% заявок становятся договорами, маржа 15%. Это оценка. Точные цифры посчитаем в разборе.</p>
+            <p class="thx__rec" id="thxRec"></p>
+          </section>
+
+          <section class="thx__card">
+            <h2 class="h3">Пока ждёте: 7 проверок, куда уходит рекламный бюджет</h2>
+            <p class="small muted">Пройдитесь по своему сайту и рекламе. Если хотя бы два пункта не выполняются, часть бюджета уходит впустую.</p>
+            <ol class="checks">
+              <li><strong>Цели в Метрике настроены на заявку и звонок,</strong> а не только на посещение сайта.</li>
+              <li><strong>Рекламный кабинет оформлен на вас.</strong> Вы видите расход и можете его выгрузить.</li>
+              <li><strong>Для каждой заявки известен источник:</strong> какое объявление и запрос её привели.</li>
+              <li><strong>На заявку отвечают за 15 минут</strong> в рабочее время, и есть скрипт первого разговора.</li>
+              <li><strong>Первый экран за несколько секунд отвечает:</strong> куда я попал, что получу, как связаться.</li>
+              <li><strong>Есть отчёт до договора:</strong> сколько заявок стали встречами и сколько встреч договорами.</li>
+              <li><strong>Реклама идёт по запросам клиентов,</strong> с минус-словами, а не по всем подряд.</li>
+            </ol>
+          </section>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/estimate.js"></script>
+  <script src="js/lead.js"></script>
+  <script src="js/bind.js"></script>
+  <script src="js/thanks.js"></script>
+</body>
+</html>

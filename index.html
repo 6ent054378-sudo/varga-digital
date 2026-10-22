@@ -1,34 +1,601 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Varga Digital — скоро</title>
-<meta name="description" content="Маркетинг и внедрение AI для бизнеса. Сайт готовится.">
-<meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#0B0D12">
-<link rel="icon" href="data:,">
-<style>
-:root{color-scheme:dark}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;background:#0B0D12;color:#E8EAF0;font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,sans-serif;display:grid;place-items:center;padding:24px}
-main{max-width:560px;text-align:center}
-.logo{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#8B93A7;margin-bottom:28px}
-.logo b{color:#E8EAF0;font-weight:600}
-h1{font-size:clamp(32px,6vw,46px);line-height:1.15;letter-spacing:-.02em;margin:0 0 18px;font-weight:650}
-h1 i{font-style:normal;color:#0E9E5A}
-p{color:#9AA2B4;margin:0 0 32px}
-a{color:#E8EAF0;text-decoration:none;border:1px solid #2A3040;border-radius:999px;padding:12px 22px;display:inline-block;transition:border-color .2s}
-a:hover{border-color:#0E9E5A}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Varga Digital: комплексный маркетинг для бизнеса с дорогим чеком</title>
+  <meta name="description" content="Приводим до 175 целевых заявок в неделю по цене, которую записываем в договор. Сайт, квиз, реклама в Яндексе, своя CRM и аналитика до договора. Запуск за 14 рабочих дней, тарифы открыты.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Varga Digital: до 175 целевых заявок в неделю по цене из договора">
+  <meta property="og:image" content="img/og.jpg">
+  <meta property="og:description" content="Сайт, квиз, реклама, CRM и аналитика в одной системе. Кабинеты остаются у вас, цены открыты.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/geologica-cyrillic-shrp-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/golos-text-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/meter.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/quiz.css">
+  <link rel="stylesheet" href="css/fly.css">
+  <link rel="stylesheet" href="css/motion.css">
 </head>
 <body>
-<main>
-  <div class="logo">Varga <b>Digital</b></div>
-  <h1>Сайт <i>скоро</i></h1>
-  <p>Маркетинг и внедрение AI для бизнеса. Уже собираем.</p>
-  <a href="https://t.me/ova_xd">Написать нам</a>
-</main>
+  <a class="skip" href="#main">К содержимому</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cross" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <header class="header" id="top">
+    <div class="wrap header__row">
+      <a class="logo" href="#top" aria-label="Varga Digital, наверх">
+        <img class="logo__mark" src="img/logo-mark.svg" alt="" width="45" height="24">
+        <span class="logo__text">Varga Digital</span>
+      </a>
+      <nav class="nav" aria-label="Разделы страницы">
+        <a href="#calc">Цена заявки</a>
+        <a href="#services">Услуги</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#research">Исследования</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+      <a class="btn btn--primary btn--sm header__cta" href="#quiz" data-goal="cta_header">Получить разбор</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. Первый экран: заголовок и картинка -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <p class="hero__price"><span>Тарифы открыты: <strong>от <span data-price="marketing.start">89 000 ₽</span> в месяц</strong></span></p>
+            <h1 class="h1">Приводим <mark class="mark">до 175 целевых заявок в неделю</mark> по цене, которую записываем в договор</h1>
+            <p class="lead">Для бизнеса, где клиент приносит от 100 000 ₽. Называем цену заявки до запуска, за 14 рабочих дней запускаем сайт, квиз и рекламу. Если за первые 90 дней заявка выйдет дороже договорной больше чем на 30%, следующий месяц работаем за полцены.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#quiz" data-goal="cta_hero">Узнать цену заявки для моего бизнеса <svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              <a class="link" href="#pricing" data-goal="cta_hero_pricing">Смотреть тарифы</a>
+            </div>
+          </div>
+
+          <div class="fly fly--hero" data-fly="hero" role="img" aria-label="Реальный сайт клиента, объявление в Яндексе и отчёт Директа с ценой конверсии"></div>
+        </div>
+
+        <ul class="facts">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><strong>Цена заявки в договоре.</strong> Дороже на 30%, месяц за полцены</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><strong>Запуск за 14 рабочих дней.</strong> Сайт, квиз, реклама, CRM</span></li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg><span><strong>Кабинеты и данные ваши.</strong> Процент с рекламы не берём</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2. Для кого -->
+    <section class="who" aria-labelledby="whoTitle">
+      <div class="wrap who__row">
+        <h2 class="who__title" id="whoTitle">Работаем с бизнесом, где один клиент приносит от 100 000 ₽</h2>
+        <ul class="who__list">
+          <li class="tile" data-photo="niche-build" data-photo-group="who" data-photo-min="4" data-alt="Строительная площадка загородного дома"><span class="tile__label">Строительство и ремонт</span></li>
+          <li class="tile" data-photo="niche-b2b" data-photo-group="who" data-alt="Переговорная комната компании"><span class="tile__label">Услуги для бизнеса</span></li>
+          <li class="tile" data-photo="niche-factory" data-photo-group="who" data-alt="Производственный цех"><span class="tile__label">Производство и оборудование</span></li>
+          <li class="tile" data-photo="niche-realty" data-photo-group="who" data-alt="Современный жилой дом"><span class="tile__label">Недвижимость</span></li>
+          <li class="tile" data-photo="niche-med" data-photo-group="who" data-alt="Светлый кабинет клиники"><span class="tile__label">Образование и медицина</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. Где теряются деньги -->
+    <section class="section" id="problem">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2">Три места, где деньги теряются раньше договора</h2>
+          <p class="lead">Реклама берёт деньги за клик, а прибыль появляется только после договора. По дороге три разрыва, и обычно ни за один из них никто не отвечает.</p>
+        </div>
+        <ul class="leaks">
+          <li class="leak">
+            <figure class="photo photo--4x3" data-photo="leak-site" data-photo-group="leaks" data-alt="Человек листает сайт на телефоне" hidden></figure>
+            <div class="leak__route"><span>Клик</span><i aria-hidden="true"></i><span>Заявка</span></div>
+            <h3 class="h3">Страница не берёт контакт</h3>
+            <p>У человека несколько секунд, чтобы понять, куда он попал и что получит. Без чёткого предложения и квиза он уходит, а клик уже оплачен.</p>
+          </li>
+          <li class="leak">
+            <figure class="photo photo--4x3" data-photo="leak-call" data-photo-group="leaks" data-alt="Телефон с пропущенными звонками на столе" hidden></figure>
+            <div class="leak__route"><span>Заявка</span><i aria-hidden="true"></i><span>Разговор</span></div>
+            <h3 class="h3">Заявка остывает</h3>
+            <p>Менеджер отвечает через несколько часов, без скрипта и напоминаний. Чем позже первый ответ, тем меньше шанс договориться о встрече.</p>
+          </li>
+          <li class="leak">
+            <figure class="photo photo--4x3" data-photo="leak-report" data-photo-group="leaks" data-alt="Распечатанный отчёт о рекламе на столе" hidden></figure>
+            <div class="leak__route"><span>Разговор</span><i aria-hidden="true"></i><span>Договор</span></div>
+            <h3 class="h3">Отчёт заканчивается на заявке</h3>
+            <p>Клики и заявки видят все. Сколько из них стали договорами, не знает никто, а платит за всё владелец.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. Система -->
+    <section class="section section--alt" id="system">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2">Одна система вместо пяти подрядчиков</h2>
+          <p class="lead">Каждое звено отвечает за следующее. Поэтому цифра в конце, договор, понятна и проверяема.</p>
+        </div>
+        <figure class="photo photo--wide" data-photo="system" data-alt="Рабочее место: монитор с воронкой продаж, телефон, блокнот" hidden></figure>
+        <div class="row rows__head" aria-hidden="true"><span></span><span>Звено</span><span>Что делаем</span><span>Что получаете</span></div>
+        <ol class="rows">
+          <li class="row"><span class="row__n">1</span><h3 class="h3">Исследование</h3><p>Ниша, конкуренты, критерии, по которым выбирает ваш клиент.</p><p class="row__get">Оффер, который отличает вас от соседей</p></li>
+          <li class="row"><span class="row__n">2</span><h3 class="h3">Сайт и квиз</h3><p>Один сегмент, одна боль, один продукт, одна кнопка.</p><p class="row__get">Контакт без длинной анкеты</p></li>
+          <li class="row"><span class="row__n">3</span><h3 class="h3">Реклама</h3><p>Яндекс Директ под запросы вашего клиента, кабинет на вас.</p><p class="row__get">Поток заявок по известной цене</p></li>
+          <li class="row"><span class="row__n">4</span><h3 class="h3">CRM и скрипты</h3><p>Каждая заявка в воронке, быстрый ответ, разговор по скрипту.</p><p class="row__get">Заявки не теряются и доходят до встречи</p></li>
+          <li class="row"><span class="row__n">5</span><h3 class="h3">Аналитика</h3><p>Отчёт от рекламы до договора каждую неделю.</p><p class="row__get">Видно, что окупается, а что отключить</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 5. Услуги -->
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2">Три услуги. Начать можно с любой</h2>
+          <p class="lead">Маркетинг под ключ для постоянного потока заявок. Исследование, чтобы не ошибиться с нишей и оффером. AI, чтобы заявки не терялись.</p>
+        </div>
+        <div class="svcs">
+          <article class="svc">
+            <div class="fly" data-fly="marketing" role="img" aria-label="Лендинги клиентов, отчёты Яндекс Директа и CRM с ценой цели"></div>
+            <p class="svc__price">от <span data-price="marketing.start">89 000 ₽</span> <small>в месяц</small></p>
+            <h3 class="h3">Комплексный маркетинг под ключ</h3>
+            <p>Три тарифа по размеру бизнеса. Реклама оплачивается отдельно, напрямую в Яндекс.</p>
+            <ul class="svc__tags" aria-label="Что входит">
+              <li>Сайт и квиз</li><li>Яндекс Директ</li><li>CRM</li><li>Скрипты</li><li>Сквозная аналитика</li><li>A/B тесты</li>
+            </ul>
+            <a class="link" href="#pricing" data-goal="cta_svc_marketing">Смотреть тарифы</a>
+          </article>
+          <article class="svc">
+            <div class="fly" data-fly="research" role="img" aria-label="Страницы исследования: лидерборд ниш, сводка и рынок в цифрах"></div>
+            <p class="svc__price">от <span data-price="research.express">49 000 ₽</span></p>
+            <h3 class="h3">Маркетинговые исследования</h3>
+            <p>Конкуренты, клиенты, юнит-экономика. Решение о нише и оффере на цифрах, а не на мнении.</p>
+            <a class="link" href="#research" data-goal="cta_svc_research">Что входит</a>
+          </article>
+          <article class="svc">
+            <div class="fly" data-fly="ai" role="img" aria-label="Значки инструментов автоматизации вокруг вашего бизнеса"></div>
+            <p class="svc__price"><span data-price="ai">95 000 ₽</span></p>
+            <h3 class="h3">Внедрение AI в бизнес</h3>
+            <p>Бот принимает и квалифицирует заявки, напоминает клиентам, разбирает звонки менеджеров.</p>
+            <a class="link" href="#ai" data-goal="cta_svc_ai">Что входит</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Первые 90 дней -->
+    <section class="section section--alt" id="process">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2">Что происходит в первые 90 дней</h2>
+          <p class="lead">Минимальный срок три месяца: меньше не хватает, чтобы честно посчитать договоры. Через 90 дней решение простое: расти, менять или остановиться.</p>
+        </div>
+        <figure class="photo photo--wide" data-photo="process" data-alt="Стартовая встреча: ноутбук, блокнот и схема работ на столе" hidden></figure>
+        <div class="track" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="track__marks" aria-hidden="true"><span style="left:0">День 1</span><span style="left:33.3%">30</span><span style="left:66.6%">60</span><span style="left:100%">90</span></div>
+        <ol class="stages">
+          <li class="stage"><span class="stage__when">Дни 1-3</span><h3 class="h3">Разбор и расчёт</h3><p>Смотрим сайт, рекламу и путь заявки. Считаем окупаемость и цель по заявкам и договорам.</p></li>
+          <li class="stage"><span class="stage__when">Дни 4-14</span><h3 class="h3">Сайт, квиз, аналитика</h3><p>Запуск за 14 рабочих дней после получения материалов. Цели в Метрике, подключение CRM.</p></li>
+          <li class="stage"><span class="stage__when">Дни 15-30</span><h3 class="h3">Запуск рекламы</h3><p>Кампании в Яндексе под запросы клиентов. Первые заявки и первая реальная цена заявки.</p></li>
+          <li class="stage"><span class="stage__when">Дни 31-60</span><h3 class="h3">Оптимизация и продажи</h3><p>A/B тесты, скрипты, обучение менеджеров, разбор звонков. Убираем то, что не окупается.</p></li>
+          <li class="stage"><span class="stage__when">Дни 61-90</span><h3 class="h3">Отчёт до договора</h3><p>Видно, сколько заявок стали встречами и договорами. Решаем вместе: масштабировать, менять или остановить.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 7. Калькулятор -->
+    <section class="section calc-sec" id="calc">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2">Окупится ли маркетинг в вашей нише</h2>
+          <p class="lead">Цена заявки берётся из реальных запусков рекламы в Яндексе. Подставьте свой чек и бюджет. Если выходит в минус, мы скажем об этом на разборе, а не возьмём деньги за работу, которая не окупится.</p>
+        </div>
+        <div class="calc">
+          <form class="calc__form" id="calcForm" novalidate>
+            <label class="field"><span>Ваша ниша</span>
+              <select class="dark-select" name="niche" id="calcNiche"><option value="">Выберите нишу</option><option value="other">Моей ниши нет в списке</option></select>
+            </label>
+            <div class="cpl" id="calcCpl" hidden>
+              <span class="cpl__label">Цена одной заявки в вашей нише</span>
+              <strong class="cpl__value" id="cplValue"></strong>
+              <p class="small" id="cplNote"></p>
+            </div>
+            <div class="calc__two">
+              <label class="field"><span>Средний чек, ₽</span><input name="check" inputmode="numeric" value="1000000" autocomplete="off"></label>
+              <label class="field"><span>Маржа с договора, %</span><input name="margin" inputmode="decimal" value="20" autocomplete="off"></label>
+            </div>
+            <label class="field"><span>Реклама в месяц, ₽</span><input name="budget" inputmode="numeric" value="200000" autocomplete="off"></label>
+            <fieldset class="field field--tariff">
+              <legend>Тариф</legend>
+              <label class="seg"><input type="radio" name="tariff" value="start"><span>Старт</span></label>
+              <label class="seg"><input type="radio" name="tariff" value="growth" checked><span>Рост</span></label>
+              <label class="seg"><input type="radio" name="tariff" value="scale"><span>Масштаб</span></label>
+            </fieldset>
+            <details class="calc__assump">
+              <summary>Допущения, которые можно поменять</summary>
+              <div class="calc__two">
+                <label class="field"><span>Цена заявки, ₽</span><input name="cpl" inputmode="numeric" value="2000" autocomplete="off"></label>
+                <label class="field"><span>Заявок в договор, %</span><input name="conv" inputmode="decimal" value="2" autocomplete="off"></label>
+              </div>
+              <p class="small">Это оценки для расчёта, не обещание. Цена заявки и конверсия зависят от ниши, оффера и скорости ответа. Точные цифры считаем в разборе.</p>
+            </details>
+          </form>
+
+          <div class="calc__result" aria-live="polite">
+            <div class="kpis">
+              <div class="kpi"><span class="kpi__v" data-out="leads">100</span><span class="kpi__l">заявок в месяц</span></div>
+              <div class="kpi"><span class="kpi__v" data-out="contracts">2</span><span class="kpi__l">договора в месяц</span></div>
+              <div class="kpi"><span class="kpi__v" data-out="need">1,6</span><span class="kpi__l">договора нужно, чтобы выйти в ноль</span></div>
+            </div>
+            <p class="calc__verdict" data-out="verdict"></p>
+            <table class="calc__table">
+              <tbody>
+                <tr><th scope="row">Прибыль с договоров</th><td data-out="profit">400 000 ₽</td></tr>
+                <tr><th scope="row">Реклама</th><td data-out="ad">200 000 ₽</td></tr>
+                <tr><th scope="row">Тариф агентства</th><td data-out="fee">129 000 ₽</td></tr>
+                <tr class="is-total"><th scope="row">Остаётся за месяц</th><td data-out="net">71 000 ₽</td></tr>
+              </tbody>
+            </table>
+            <p class="small muted">Первые 1-2 месяца идёт запуск, поэтому смотрите сумму за 3-6 месяцев, а не за один месяц.</p>
+            <a class="btn btn--primary btn--block" href="#quiz" data-goal="cta_calc">Получить точный расчёт для моей ниши <svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Тарифы -->
+    <section class="section" id="pricing">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2">Три тарифа. Цены и состав открыты</h2>
+          <p class="lead">Оплата за месяц, минимум три месяца. Рекламный бюджет вы платите напрямую в Яндекс, мы не берём с него процент.</p>
+        </div>
+        <div class="tiers">
+          <article class="tier">
+            <div class="tier__name"><h3 class="h3">Старт</h3></div>
+            <p class="tier__who">Один город или одно направление, нужен запуск</p>
+            <p class="tier__price"><span data-price="marketing.start">89 000 ₽</span> <small>в месяц</small></p>
+            <p class="tier__ad small">Реклама отдельно, от 100 тыс. ₽ в месяц</p>
+            <ul class="ticks">
+              <li>Одностраничный сайт с квизом, 6-10 экранов</li>
+              <li>2 кампании в Яндекс Директе</li>
+              <li>Метрика, цели, коллтрекинг</li>
+              <li>Своя CRM с воронкой, без платы за лицензии</li>
+              <li>Скрипт первого контакта, 1 сессия для менеджеров</li>
+              <li>2 A/B теста в месяц</li>
+              <li>Отчёт каждый месяц и короткий каждую неделю</li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="#quiz" data-goal="cta_tier_start" data-tariff="Старт">Подобрать тариф</a>
+          </article>
+          <article class="tier tier--main">
+            <div class="tier__name"><h3 class="h3">Рост</h3><span class="tier__badge">Выбирают чаще</span></div>
+            <p class="tier__who">Есть менеджер и CRM, нужен рост числа договоров</p>
+            <p class="tier__price"><span data-price="marketing.growth">129 000 ₽</span> <small>в месяц</small></p>
+            <p class="tier__ad small">Реклама отдельно, от 150 тыс. ₽ в месяц</p>
+            <ul class="ticks">
+              <li>Многостраничный сайт, 10+ экранов, и квиз с вариантом для теста</li>
+              <li>4 кампании: поиск, РСЯ, ретаргетинг, бренд</li>
+              <li>Сквозная аналитика до договора</li>
+              <li>Своя CRM: причины отказа, автозадачи</li>
+              <li>Скрипты с работой с возражениями, 2 сессии в квартал, разбор 20 звонков в месяц</li>
+              <li>4 A/B теста в месяц</li>
+              <li>Яндекс Бизнес и Карты</li>
+              <li>Дашборд раз в неделю и месячный разбор</li>
+            </ul>
+            <a class="btn btn--primary btn--block" href="#quiz" data-goal="cta_tier_growth" data-tariff="Рост">Подобрать тариф</a>
+          </article>
+          <article class="tier">
+            <div class="tier__name"><h3 class="h3">Масштаб</h3></div>
+            <p class="tier__who">Несколько направлений, отдел продаж из 2 и более менеджеров</p>
+            <p class="tier__price"><span data-price="marketing.scale">179 000 ₽</span> <small>в месяц</small></p>
+            <p class="tier__ad small">Реклама отдельно, от 250 тыс. ₽ в месяц</p>
+            <ul class="ticks">
+              <li><strong>Полное маркетинговое исследование в первый месяц входит</strong> (отдельно <span data-price="research.full">120 000 ₽</span>)</li>
+              <li>Многостраничный сайт и отдельные посадочные под сегменты</li>
+              <li>До 3 квизов и до 8 кампаний</li>
+              <li>Дашборд с ДРР, ROMI и ценой договора</li>
+              <li>Оценка звонков в CRM, обзвон старой базы</li>
+              <li>Ежемесячное обучение менеджеров</li>
+              <li>6 A/B тестов в месяц, Авито и ретаргетинг</li>
+              <li>Созвон раз в неделю и встреча с владельцем раз в месяц</li>
+            </ul>
+            <a class="btn btn--ghost btn--block" href="#quiz" data-goal="cta_tier_scale" data-tariff="Масштаб">Подобрать тариф</a>
+          </article>
+        </div>
+        <p class="tiers__note small">Не входит в тарифы: рекламный бюджет и коллтрекинг (платите напрямую), фото- и видеосъёмка, SEO, продажи за вас. Тариф не гарантирует число договоров: их подписывает ваш отдел продаж.</p>
+      </div>
+    </section>
+
+    <!-- 9. Исследования -->
+    <section class="section section--alt" id="research">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2">Маркетинговое исследование для вашего бизнеса</h2>
+          <p class="lead">Исследование дешевле ошибки: неверная ниша или оффер сжигают рекламный бюджет за первый месяц. Оно показывает, куда вкладывать деньги, до того как они потрачены.</p>
+        </div>
+        <figure class="photo photo--wide" data-photo="research" data-alt="Распечатанное маркетинговое исследование с графиками" hidden></figure>
+        <div class="packs">
+          <article class="pack">
+            <div class="pack__top"><p class="pack__price"><span data-price="research.express">49 000 ₽</span></p><span class="pack__time">7 рабочих дней</span></div>
+            <h3 class="h3">Экспресс: ниша и конкуренты</h3>
+            <ul class="ticks">
+              <li>Анализ 10 конкурентов: сайты, офферы, цены, реклама</li>
+              <li>Портрет клиента и критерии, по которым он выбирает</li>
+              <li>30 тезисов для оффера и заголовков</li>
+              <li>Рекомендации по каналам и рекламному бюджету</li>
+            </ul>
+          </article>
+          <article class="pack pack--main">
+            <div class="pack__top"><p class="pack__price"><span data-price="research.full">120 000 ₽</span></p><span class="pack__time">14-21 рабочий день</span></div>
+            <h3 class="h3">Полное исследование</h3>
+            <ul class="ticks">
+              <li>Всё из экспресс-пакета</li>
+              <li>10 интервью с вашими клиентами</li>
+              <li>«Тайный покупатель» у 5 конкурентов</li>
+              <li>Анализ рекламы конкурентов в Яндексе</li>
+              <li>Юнит-экономика и расчёт окупаемости</li>
+              <li>План на 3, 6 и 12 месяцев</li>
+            </ul>
+          </article>
+        </div>
+        <div class="packs__foot">
+          <p>На тарифе Масштаб полное исследование входит в стоимость. На других тарифах стоимость экспресс-пакета засчитывается в оплату, если вы подписываете тариф в течение 30 дней после сдачи исследования.</p>
+          <a class="btn btn--dark" href="#quiz" data-goal="cta_research" data-need="Исследование ниши и конкурентов">Заказать исследование <svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. AI -->
+    <section class="section" id="ai">
+      <div class="wrap ai">
+        <div class="ai__copy">
+          <h2 class="h2">Внедрение AI: заявки не теряются, менеджеры работают быстрее</h2>
+          <p class="ai__price"><span data-price="ai">95 000 ₽</span><small>разово, 14 рабочих дней</small></p>
+          <p class="lead">Настраиваем под ваши цены, скрипты и CRM.</p>
+          <a class="btn btn--dark" href="#quiz" data-goal="cta_ai" data-need="Внедрение AI">Обсудить внедрение <svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <p class="small muted">Не входит: оплата сервисов (API, телефония, сервер) и доработки сверх согласованного.</p>
+          <figure class="photo photo--4x5 ai__photo" data-photo="ai" data-alt="Телефон с диалогом бота, который принимает заявку" hidden></figure>
+        </div>
+        <ul class="ai__list">
+          <li><h3 class="h3">Бот-приёмщик заявок</h3><p>Отвечает сразу, задаёт пять вопросов, записывает заявку в CRM. Работает в Telegram и на сайте.</p></li>
+          <li><h3 class="h3">Автоответы и напоминания</h3><p>Подтверждение заявки, напоминание о встрече, дожим тех, кто не записался.</p></li>
+          <li><h3 class="h3">Помощник менеджера</h3><p>Подсказки по возражениям и черновики сообщений на основе ваших скриптов.</p></li>
+          <li><h3 class="h3">Разбор звонков</h3><p>Расшифровка, оценка по критериям, еженедельный отчёт о слабых местах отдела продаж.</p></li>
+          <li><h3 class="h3">База знаний компании</h3><p>Бот отвечает по вашим ценам и условиям, а не придумывает.</p></li>
+          <li><h3 class="h3">Обучение команды</h3><p>2 часа и инструкция: как пользоваться и что делать, если бот ошибся.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 11. Сравнение с рынком: суммы за 6 месяцев, источники ниже -->
+    <section class="section section--alt" id="compare">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2">Сколько стоит то же самое без нас</h2>
+          <p class="lead">Собирать по частям: пять подрядчиков и никто не отвечает за договор. Нанять маркетолога: одна зарплата уже дороже тарифа, а сайт, CRM и скрипты он сам не сделает.</p>
+        </div>
+
+        <div class="vs" aria-label="Сравнение затрат за 6 месяцев">
+          <div class="vs__row">
+            <div class="vs__name"><strong>По частям</strong><span>5 подрядчиков, без аналитики до договора</span></div>
+            <div class="vs__track"><span class="vs__bar" style="left:32.9%;width:58%"></span></div>
+            <div class="vs__sum num">329 000 - 909 000 ₽</div>
+          </div>
+          <div class="vs__row">
+            <div class="vs__name"><strong>Штатный маркетолог</strong><span>только зарплата, без налогов и подрядчиков</span></div>
+            <div class="vs__track"><span class="vs__bar" style="left:53.7%;width:8.7%"></span></div>
+            <div class="vs__sum num">537 000 - 624 000 ₽</div>
+          </div>
+          <div class="vs__row vs__row--us">
+            <div class="vs__name"><strong>Varga Digital, Старт</strong><span>всё включено, один ответственный</span></div>
+            <div class="vs__track"><span class="vs__dot" style="left:53.4%"></span></div>
+            <div class="vs__sum num" data-six="start">534 000 ₽</div>
+          </div>
+          <div class="vs__scale" aria-hidden="true"><span style="left:0">0</span><span style="left:50%">500 тыс.</span><span style="left:100%">1 млн ₽</span></div>
+        </div>
+
+        <div class="scroll-x">
+          <table class="cmp">
+            <thead>
+              <tr><th scope="col">За 6 месяцев</th><th scope="col">Если собирать по частям</th><th scope="col" class="cmp__us">Varga Digital, Старт</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Ведение Директа, 30-50 тыс. ₽ в месяц</th><td>180 000 - 300 000 ₽</td><td class="cmp__us">входит</td></tr>
+              <tr><th scope="row">Настройка рекламы с нуля</th><td>25 000 - 50 000 ₽</td><td class="cmp__us">входит</td></tr>
+              <tr><th scope="row">Сайт: лендинг или корпоративный</th><td>50 000 - 350 000 ₽</td><td class="cmp__us">входит</td></tr>
+              <tr><th scope="row">Квиз для сайта</th><td>около 39 000 ₽</td><td class="cmp__us">входит</td></tr>
+              <tr><th scope="row">Внедрение CRM</th><td>30 000 - 120 000 ₽ и лицензии каждый месяц</td><td class="cmp__us">своя CRM, без лицензий</td></tr>
+              <tr><th scope="row">Скрипт продаж</th><td>5 000 - 50 000 ₽</td><td class="cmp__us">входит</td></tr>
+              <tr><th scope="row">Аналитика до договора, разбор звонков, A/B тесты</th><td>отдельные подрядчики, в сумму не включены</td><td class="cmp__us">входит</td></tr>
+              <tr class="is-total"><th scope="row">Итого</th><td>329 000 - 909 000 ₽</td><td class="cmp__us" data-six="start">534 000 ₽</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted cmp__src">Источники: ведение и настройка Директа, сайты: Sostav, vc.ru, lpmotor.ru (2025-2026); внедрение CRM: vc.ru, 2026; квиз: fl.ru; скрипты: hrtime.ru; зарплата маркетолога 89-104 тыс. ₽ в месяц: ГородРабот и Finder по данным Skillbox, 2025. Ориентир, не оферта. Рекламный бюджет платится отдельно в любом варианте и в сравнение не входит.</p>
+      </div>
+    </section>
+
+    <!-- 12. Гарантии -->
+    <section class="section" id="guarantees">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2">Что мы гарантируем и чего не делаем</h2>
+          <p class="lead">Мы не обещаем договоры: их подписывает ваш отдел продаж. Мы отвечаем за поток, цену заявки и прозрачность. Всё прописано в договоре.</p>
+        </div>
+        <div class="gx">
+          <ul class="gx__list">
+            <li><h3 class="h3">Запуск за 14 рабочих дней</h3><p>Сайт, квиз и кампании за 14 рабочих дней после получения материалов. Если задержим по своей вине, продлим оплаченный месяц на столько же дней бесплатно.</p></li>
+            <li><h3 class="h3">Кабинеты и данные ваши</h3><p>Яндекс Директ, Метрика и домен оформлены на вас, данные из CRM выгружаются по первому запросу. Мы не меняем доступы без вашего письменного согласия.</p></li>
+            <li><h3 class="h3">Отчёт каждую неделю</h3><p>Короткий отчёт по понедельникам и разбор за месяц до 5 числа. От рекламы до договора, а не только до заявки.</p></li>
+            <li><h3 class="h3">Цена заявки в договоре</h3><p>После разбора записываем в договор цену целевой заявки. Если за первые 90 дней после запуска рекламы средняя цена окажется выше договорной больше чем на 30%, следующий месяц работаем за полцены. Условия: рекламный бюджет не ниже согласованного, оффер и цены на ваши услуги не менялись. Целевая заявка: живой человек с рабочим телефоном, без дублей и спама.</p></li>
+            <li><h3 class="h3">Выход без штрафов</h3><p>Остановить проект до запуска рекламы можно с возвратом оплаты за вычетом выполненных работ по акту. Пауза до 30 дней один раз за 6 месяцев.</p></li>
+          </ul>
+          <aside class="gx__not">
+            <figure class="photo photo--4x3" data-photo="contract" data-alt="Договор и ручка на столе" hidden></figure>
+            <h3 class="h3">Чего мы не делаем</h3>
+            <ul>
+              <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Не гарантируем договоры и выручку</li>
+              <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Не заменяем ваш отдел продаж</li>
+              <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Не берём процент с рекламного бюджета</li>
+              <li><svg aria-hidden="true"><use href="#i-cross"/></svg>Не работаем с бизнесом, где клиент приносит меньше 100 000 ₽</li>
+            </ul>
+            <p class="small">Перед подписанием проверим, готов ли ваш бизнес: есть ли кому быстро отвечать на заявки и какая у вас экономика. Если не готов, скажем прямо.</p>
+          </aside>
+        </div>
+        <div class="flags">
+          <div class="flags__head">
+            <h3 class="h3">Как проверить любое агентство, включая нас</h3>
+            <p>Эти пять признаков должны быть у любого подрядчика, прежде чем вы отдадите ему бюджет. Если сомневаетесь в нынешнем, разберём его рекламу в рамках бесплатного разбора.</p>
+          </div>
+          <ul class="ticks">
+            <li><strong>Гостевой или полный доступ к кабинетам.</strong> Если рекламой управляют из кабинета агентства, вы не видите, куда уходят деньги.</li>
+            <li><strong>Договор с перечнем работ, сроками и результатом.</strong> Фраза «ведём рекламу» результатом не является.</li>
+            <li><strong>Отчёт по целевым действиям,</strong> а не только по кликам и показам.</li>
+            <li><strong>Понятная схема оплаты:</strong> абонентская плата отдельно, рекламный бюджет отдельно, без скрытой комиссии.</li>
+            <li><strong>Кейсы с нишей, периодом и бюджетом,</strong> которые можно проверить звонком клиенту.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Кейсы и отзывы: появляются, когда владелец добавит реальные данные в js/config.js -->
+    <section class="section" id="cases" hidden>
+      <div class="wrap">
+        <div class="head"><h2 class="h2">Результаты клиентов</h2></div>
+        <ul class="cases" id="casesList"></ul>
+        <ul class="reviews" id="reviewsList"></ul>
+      </div>
+    </section>
+
+    <!-- 14. Основатель -->
+    <section class="section section--joined" id="founder">
+      <div class="wrap founder">
+        <div class="founder__ph" id="founderPhoto" aria-hidden="true"><span>Д</span></div>
+        <div class="founder__text">
+          <h2 class="h2">Вы разговариваете с основателем, а не с менеджером по продажам</h2>
+          <p class="lead">Меня зовут Дмитрий. Разбор вашего сайта и рекламы я делаю сам и сам подбираю тариф. Если Varga Digital вам не подходит, я скажу об этом на разборе.</p>
+          <ul class="founder__links" id="founderLinks"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. Квиз -->
+    <section class="section section--alt" id="quiz">
+      <div class="wrap">
+        <div class="head">
+          <h2 class="h2">Цена заявки, расчёт окупаемости и разбор сайта за 24 часа</h2>
+          <p class="lead">6 вопросов, около минуты. Бесплатно.</p>
+        </div>
+        <div class="quiz-grid">
+          <div class="quiz" id="quizBox" data-state="idle">
+            <div class="quiz__top">
+              <div class="quiz__bar" aria-hidden="true"><i id="quizProgress"></i></div>
+              <span class="quiz__count small" id="quizCount" aria-live="polite"></span>
+            </div>
+            <div class="quiz__body" id="quizBody"></div>
+            <div class="quiz__nav">
+              <button type="button" class="quiz__back" id="quizBack" hidden>Назад</button>
+            </div>
+          </div>
+          <aside class="quiz-side" aria-label="Что вы получите">
+            <h3 class="h3">Что вы получите</h3>
+            <ul class="ticks">
+              <li>Цена заявки для вашего бизнеса, которую мы готовы записать в договор</li>
+              <li>Три варианта расчёта окупаемости: осторожный, базовый, оптимистичный</li>
+              <li>Разбор вашего сайта и рекламы за 24 часа</li>
+              <li>Подбор тарифа и честный ответ, стоит ли вам это делать</li>
+            </ul>
+            <p class="small" id="slotsLine" hidden></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. Вопросы -->
+    <section class="section" id="faq">
+      <div class="wrap faq">
+        <h2 class="h2">Частые вопросы</h2>
+        <div class="faq__list">
+          <details><summary>Реклама входит в стоимость тарифа?</summary><p>Нет. Рекламный бюджет вы платите напрямую в Яндекс из своего кабинета, мы не берём с него процент. Рекомендуем от 100 тыс. ₽ в месяц на тарифе Старт, от 150 тыс. на Росте и от 250 тыс. на Масштабе.</p></details>
+          <details><summary>Откуда цены заявки в калькуляторе?</summary><p>Это ориентиры по реальным запускам рекламы в Яндекс Директе в этих нишах, с НДС. В вашем городе и с вашим оффером цена будет другой, поэтому точную цифру мы называем после разбора и записываем в договор.</p></details>
+          <details><summary>Нужно ли платить за CRM?</summary><p>Нет. CRM у нас своя: воронка, задачи, причины отказа и отчёт до договора входят в тариф без платы за лицензии.</p></details>
+          <details><summary>Через сколько будут заявки и договоры?</summary><p>Первые заявки идут через 2-3 недели после запуска рекламы. Договоры зависят от цикла вашей сделки: где-то это две недели, где-то два-три месяца. Поэтому минимальный срок работы три месяца, а результаты мы считаем в сумме за период.</p></details>
+          <details><summary>Что вы гарантируете?</summary><p>Цену заявки: записываем её в договор, и если за первые 90 дней она выйдет дороже больше чем на 30%, следующий месяц работаем за полцены. Ещё запуск за 14 рабочих дней и прозрачность кабинетов. Договоры не гарантируем: их подписывает ваш отдел продаж.</p></details>
+          <details><summary>Что нужно от меня?</summary><p>Материалы о компании, доступы к сайту и кабинетам, ответ на заявку в течение 15 минут в рабочее время и доступ к вашей CRM. Остальное делаем мы.</p></details>
+          <details><summary>Можно ли остановить проект?</summary><p>Да. До запуска рекламы вы вернёте оплату за вычетом выполненных работ по акту. После запуска можно уйти по окончании оплаченного месяца с уведомлением за 14 дней или поставить паузу до 30 дней.</p></details>
+          <details><summary>С какими нишами вы не работаете?</summary><p>С бизнесом, где клиент приносит меньше 100 000 ₽, и с теми, у кого нет процесса продаж: нет человека, который отвечает на заявки. Реклама без этого сгорает.</p></details>
+          <details><summary>Чем вы отличаетесь от фрилансера или обычного агентства?</summary><p>Фрилансер настраивает рекламу, агентство часто останавливается на отчёте по заявкам. Мы собираем всю цепочку от оффера до договора и показываем цифры на каждом шаге. Цены, состав работ и гарантии открыты до первого разговора.</p></details>
+          <details><summary>Как вы работаете с персональными данными?</summary><p>Данные из заявки используем только для связи с вами и подготовки расчёта. Подробности в <a href="privacy.html">политике конфиденциальности</a>.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17. Финальный блок -->
+    <section class="final">
+      <div class="wrap final__row">
+        <div>
+          <h2 class="h2">Узнайте цену заявки для вашего бизнеса до того, как потратите деньги</h2>
+          <p>За 24 часа и бесплатно: цена заявки в вашей нише, три варианта окупаемости, разбор сайта и рекламы и честный ответ, стоит ли запускаться.</p>
+        </div>
+        <a class="btn btn--primary" href="#quiz" data-goal="cta_final">Узнать цену заявки <svg class="arr" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__grid">
+      <div class="footer__brand">
+        <a class="logo" href="#top" aria-label="Varga Digital, наверх">
+          <img class="logo__mark" src="img/logo-mark.svg" alt="" width="45" height="24">
+          <span class="logo__text">Varga Digital</span>
+        </a>
+        <p class="small muted">Комплексный маркетинг, исследования и AI для бизнеса с дорогим чеком.</p>
+        <p class="small muted" id="legalLine"></p>
+      </div>
+      <nav class="footer__nav" aria-label="Подвал">
+        <a href="#services">Услуги</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#research">Маркетинговое исследование для вашего бизнеса</a>
+        <a href="#ai">Внедрение AI</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+      </nav>
+      <ul class="footer__contacts" id="footerContacts"></ul>
+    </div>
+  </footer>
+
+  <div class="sticky" id="sticky" hidden>
+    <a class="btn btn--primary btn--block" href="#quiz" data-goal="cta_sticky">Узнать цену заявки</a>
+  </div>
+
+  <div class="cookie" id="cookie" role="region" aria-label="Уведомление о cookie" hidden>
+    <p>Сайт использует cookie и Метрику. <a href="privacy.html">Подробнее</a></p>
+    <button type="button" class="btn btn--ghost btn--sm" id="cookieOk">Понятно</button>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/estimate.js"></script>
+  <script src="js/niches-data.js"></script>
+  <script src="js/niche-select.js"></script>
+  <script src="js/lead.js"></script>
+  <script src="js/quiz-data.js"></script>
+  <script src="js/bind.js"></script>
+  <script src="js/calc.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/photos.js"></script>
+  <script src="js/fly-data.js"></script>
+  <script src="js/fly.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
