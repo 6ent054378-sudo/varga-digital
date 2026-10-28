@@ -36,6 +36,6 @@ window.SITE_CONFIG = {
   /* Адрес воркера приёма заявок (backend/telegram-worker.mjs). Пока пусто, заявки работают в тестовом режиме */
   webhookUrl: "https://pulka-leads.pulka-leads.workers.dev",
   /* Откуда пришёл посетитель: параметр from в ссылке из подвала клиентского сайта */
-  metrikaId: "",
+  metrikaId: "113864185",
   demo: false
 };
