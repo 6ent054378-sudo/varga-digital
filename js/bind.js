@@ -89,13 +89,44 @@
     var cl = document.getElementById("casesList"), rl = document.getElementById("reviewsList");
     cs.forEach(function (c) {
       var li = el("li", "case");
-      li.appendChild(el("p", "muted small", c.niche + (c.period ? ", " + c.period : "")));
-      li.appendChild(el("p", "case__res", c.result));
-      if (c.budget) li.appendChild(el("p", "small", "Бюджет: " + c.budget));
+      var top = el("div", "case__top");
+      top.appendChild(el("p", "case__niche", c.niche));
+      top.appendChild(el("p", "case__meta", (c.city ? c.city + ", " : "") + (c.period || "")));
+      li.appendChild(top);
+      if (c.cpa) {
+        var big = el("p", "case__big");
+        big.appendChild(el("strong", "", c.cpa));
+        big.appendChild(el("span", "", "цена заявки"));
+        li.appendChild(big);
+      }
+      var dl = el("dl", "case__stats");
+      [["Расход", c.spend], ["Заявок", c.leads], ["Конверсия сайта", c.rate]].forEach(function (r) {
+        if (!r[1]) return;
+        var d = el("div"); d.appendChild(el("dt", "", r[0])); d.appendChild(el("dd", "", r[1])); dl.appendChild(d);
+      });
+      if (dl.children.length) li.appendChild(dl);
+      if (c.result) li.appendChild(el("p", "case__res", c.result));
       if (c.note) li.appendChild(el("p", "small muted", c.note));
+      if (c.img) {
+        var a = el("a", "case__shot"); a.href = c.img; a.target = "_blank"; a.rel = "noopener";
+        var im = el("img"); im.src = c.img; im.alt = c.imgAlt || c.niche; im.loading = "lazy";
+        a.appendChild(im); li.appendChild(a);
+      }
+      var btn = el("a", "btn btn--dark btn--block", "Хочу так же");
+      btn.href = "#quiz"; btn.setAttribute("data-goal", "cta_case");
+      li.appendChild(btn);
       if (c.link) li.appendChild(link(c.link, "Подробнее"));
       cl.appendChild(li);
     });
+    if (cs.length) {
+      var cta = el("li", "case case--cta");
+      cta.appendChild(el("p", "case__niche", "Ваша ниша"));
+      cta.appendChild(el("p", "case__ctatitle", "Назовём цену заявки для вашего бизнеса до запуска и запишем её в договор"));
+      var b2 = el("a", "btn btn--primary btn--block", "Узнать цену заявки");
+      b2.href = "#quiz"; b2.setAttribute("data-goal", "cta_case_own");
+      cta.appendChild(b2);
+      cl.appendChild(cta);
+    }
     rv.forEach(function (r) {
       var li = el("li", "review");
       li.appendChild(el("p", "", r.text));
@@ -105,6 +136,15 @@
       who.appendChild(t); li.appendChild(who); rl.appendChild(li);
     });
     sec.hidden = false;
+    var hp = document.getElementById("heroProof");
+    var best = cs.filter(function (c) { return c.cpa && c.leads; }).sort(function (x, y) { return parseInt(y.leads, 10) - parseInt(x.leads, 10); })[0];
+    if (hp && best) {
+      hp.appendChild(document.createTextNode("Свежий запуск: "));
+      hp.appendChild(el("strong", "", best.leads + " заявок по " + best.cpa));
+      hp.appendChild(document.createTextNode(", " + best.niche.toLowerCase() + ", " + best.city + ". "));
+      hp.appendChild(link("#cases", "Смотреть цифры"));
+      hp.hidden = false;
+    }
   }
 
   bindPrices(document);

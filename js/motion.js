@@ -42,7 +42,7 @@
   }
 
   /* Что появляется при прокрутке */
-  var TARGETS = ".hero__price, .hero .lead, .hero__actions, .facts li, .who__row > *, .head > *, .leak, .rows__head, .rows .row, .svc, .stages .stage, .tiers .tier, .tiers__note, .pack, .seg, .reviews > *, .founder > *, .ai > *, .gx > *, .quiz-grid > *, .faq > *, .final__row > *, .footer__grid > *, .photo, .vs, .track";
+  var TARGETS = ".hero__price, .hero .lead, .hero__actions, .facts li, .who__row > *, .head > *, .leak, .rows__head, .rows .row, .svc, .stages .stage, .tiers .tier, .tiers__note, .pack, .seg, .case, .hero__proof, .reviews > *, .founder > *, .ai > *, .gx > *, .quiz-grid > *, .faq > *, .final__row > *, .footer__grid > *, .photo, .vs, .track";
   var FLAGS = ".vs, .track, .hero .h1";
   var seen = [];
   var els = Array.prototype.slice.call(document.querySelectorAll(TARGETS));
